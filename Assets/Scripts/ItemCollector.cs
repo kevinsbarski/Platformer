@@ -21,23 +21,12 @@ public class ItemCollector : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Pineapple"))
         {
-            Debug.Log("pinaple");
             RespawnPineapple();
         }
     }
-
-
-
-    private int CountPineapples()
-    {
-        GameObject[] pineapples = GameObject.FindGameObjectsWithTag("Pineapple");
-        Debug.Log(pineapples.Length);
-        return pineapples.Length;
-    }
-
+    
     private void RespawnPineapple()
     {
-        Debug.Log("RespawnEntered!");
         if (pineapplePrefab != null && spawnLocations.Length > 0)
         {
             
@@ -46,10 +35,6 @@ public class ItemCollector : MonoBehaviour
             GameObject pineaplle = GameObject.FindGameObjectWithTag("Pineapple");
             pineaplle.transform.position = spawnLocation.position;
 
-        }
-        else
-        {
-            Debug.LogWarning("Pineapple prefab or spawn locations not set.");
         }
     }
 }
